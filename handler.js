@@ -2,9 +2,9 @@
 const AWS = require('aws-sdk');
 const uuid = require('uuid');
 
-const db = new AWS.DynamoDB.DocumentClient();
-
 module.exports.rsvp = async (event) => {
+  const db = new AWS.DynamoDB.DocumentClient();
+
   const data = JSON.parse(event.body);
   const { name, people, diet, song } = data;
 
@@ -39,6 +39,18 @@ module.exports.rsvp = async (event) => {
     await db.put(params).promise();
   } catch (e) {
     console.error(e);
+
+    return {
+      statusCode: 500,
+      headers: {
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': 'https://mikeandeleni.com',
+      },
+      body: JSON.stringify({
+        message: `Error processing ${name}'s rsvp`,
+        item: params,
+      }),
+    };
   }
 
   return {
