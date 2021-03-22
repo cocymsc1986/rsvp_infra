@@ -6,7 +6,7 @@ module.exports.rsvp = async (event) => {
   const db = new AWS.DynamoDB.DocumentClient();
 
   const data = JSON.parse(event.body);
-  const { name, people, diet, song } = data;
+  const { attending, name, people, diet, song } = data;
 
   if (name === '') {
     console.error('No name provided');
@@ -28,6 +28,7 @@ module.exports.rsvp = async (event) => {
       id: uuid.v1(),
       createdAt: timestamp,
       updatedAt: timestamp,
+      attending,
       name,
       people,
       diet,

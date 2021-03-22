@@ -13,6 +13,7 @@ describe('API post endpoint', () => {
   const mockPayload = (overrides) => {
     return {
       body: JSON.stringify({
+        attending: 'yes',
         name: 'testName',
         people: 'Person1, Person2',
         diet: 'None',
@@ -48,6 +49,7 @@ describe('API post endpoint', () => {
     expect(mockDbCall.mock.calls[0][0]).toEqual(
       expect.objectContaining({
         Item: expect.objectContaining({
+          attending: 'yes',
           diet: 'None',
           name: 'testName',
           people: 'Person1, Person2',
@@ -77,6 +79,7 @@ describe('API post endpoint', () => {
     expect(mockDbCall.mock.calls[0][0]).toEqual(
       expect.objectContaining({
         Item: expect.objectContaining({
+          attending: 'yes',
           diet: 'None',
           name: 'testName',
           people: 'Person1, Person2',

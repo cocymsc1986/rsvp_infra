@@ -173,7 +173,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/rsvp-infra/dev/1615404617420-2021-03-10T19:30:17.420Z/rsvp-infra.zip"
+          "S3Key": "serverless/rsvp-infra/dev/1616095095469-2021-03-18T19:18:15.469Z/rsvp-infra.zip"
         },
         "Handler": "handler.rsvp",
         "Runtime": "nodejs12.x",
@@ -196,14 +196,14 @@
         "RsvpLogGroup"
       ]
     },
-    "RsvpLambdaVersionNdFm6H0cmNMTVQx5DA6ZKM1w9cwpviA9xnLlapUsvr4": {
+    "RsvpLambdaVersionX7D08BFBTFvEVxPoJvKFQsKzYU4FN6dIO4bzZSI39iI": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "RsvpLambdaFunction"
         },
-        "CodeSha256": "uhVxVU4sgDfQSiQbcW3L+ngyHXjjJlg3C8D6I4BmwiU="
+        "CodeSha256": "9CoFigMnPe5SP6TuJaqL3ZhNdqr/wgaHe3oob9ss+Sw="
       }
     },
     "ApiGatewayRestApi": {
@@ -321,7 +321,7 @@
         "MethodResponses": []
       }
     },
-    "ApiGatewayDeployment1615404612758": {
+    "ApiGatewayDeployment1616095089303": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -404,7 +404,7 @@
     "RsvpLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "RsvpLambdaVersionNdFm6H0cmNMTVQx5DA6ZKM1w9cwpviA9xnLlapUsvr4"
+        "Ref": "RsvpLambdaVersionX7D08BFBTFvEVxPoJvKFQsKzYU4FN6dIO4bzZSI39iI"
       }
     },
     "ServiceEndpoint": {
